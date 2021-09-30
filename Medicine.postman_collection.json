@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "6d34cc63-853b-4d7b-8160-70c529e0b828",
+		"name": "Medicine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "import medicines",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "medicines",
+							"type": "file",
+							"src": "/C:/Users/lenovo/Desktop/MedicineDataSet (2) (1).xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{Dev}}/import/medicines",
+					"host": [
+						"{{Dev}}"
+					],
+					"path": [
+						"import",
+						"medicines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search medicine by name or batch no",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Dev}}/medicines/searchByNameOrBatchNumber?searchByNameOrBatchNumber=SNF0020",
+					"host": [
+						"{{Dev}}"
+					],
+					"path": [
+						"medicines",
+						"searchByNameOrBatchNumber"
+					],
+					"query": [
+						{
+							"key": "searchByNameOrBatchNumber",
+							"value": "SNF0020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete medicine by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Dev}}/delete/medicine?id=6155ec3976d1721c2e904ee2",
+					"host": [
+						"{{Dev}}"
+					],
+					"path": [
+						"delete",
+						"medicine"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6155ec3976d1721c2e904ee2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all medicine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Dev}}/medicines",
+					"host": [
+						"{{Dev}}"
+					],
+					"path": [
+						"medicines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update medicine",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"c_name\": \"SELSUN SHAMPOO 120ML\",\r\n    \"c_batch_no\": \"BKF0044\",\r\n    \"d_expiry_date\": \"Mon May 01 2023 05:30:00 GMT+0530 (India Standard Time)\",\r\n    \"n_balance_qty\": \"25\",\r\n    \"c_packaging\": \"120ML\",\r\n    \"c_unique_code\": \"55444\",\r\n    \"c_schemes\": \"24+3\",\r\n    \"n_mrp\": \"348.63\",\r\n    \"c_manufacturer\": \"ABBOTT HEALTH CARE-DERMA\",\r\n    \"hsn_code\": \"30041010\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Dev}}/update/medicine?id=6155ec3976d1721c2e904ee2",
+					"host": [
+						"{{Dev}}"
+					],
+					"path": [
+						"update",
+						"medicine"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6155ec3976d1721c2e904ee2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
